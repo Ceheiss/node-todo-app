@@ -1,5 +1,5 @@
 const readTodos = (array) => {
-  let todoString = "";
+  let todoString = "============================\nHERE ARE YOUR CURRENT TODOS\n============================\n";
   array.forEach(el => todoString += `* ${el}\n`);
   return todoString
 }
