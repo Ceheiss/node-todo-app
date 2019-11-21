@@ -1,6 +1,7 @@
 //const readline = require('readline');
 const readTodosFromFile = require("./fileOperations").readTodosFromFile;
-const modifyTodosInFile = require("./fileOperations").modifyTodosInFile;
+const addTodoInFile = require("./fileOperations").addTodoInFile;
+const deleteTodoFromFile = require("./fileOperations").deleteTodoFromFile;
 const updateTodoInFile = require("./fileOperations").updateTodoInFile;
 const createTodo = require("./createTodo");
 const readTodos = require("./readTodos");
@@ -23,15 +24,15 @@ rl.question('What do you want to do next? ', (answer) => {
 });
 */
 
-let command = process.argv[2];
+let command = process.argv[2];``
 let firstArg = process.argv[3];
 let secondArg = process.argv[4];
 
 let startFunc = (command, firstArg, secondArg) => {
-  if (command === "add") modifyTodosInFile(createTodo, firstArg);
+  if (command === "add") addTodoInFile(createTodo, firstArg);
   if (command === "read") readTodosFromFile(readTodos);
   if (command === "edit") updateTodoInFile(updateTodo, firstArg, secondArg);
-  if (command === "delete") modifyTodosInFile(deleteTodo, firstArg);
+  if (command === "delete") deleteTodoFromFile(deleteTodo, firstArg);
 }
 
 startFunc(command, firstArg, secondArg);
