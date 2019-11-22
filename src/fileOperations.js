@@ -4,17 +4,19 @@ const readTodos = require("./readTodos");
 const readTodosFromFile = async (readTodos) => {
   try {
     const data = JSON.parse(await fs.readFile('database/todoList.json'))
+    console.log("data from read: ", data)
     console.log(readTodos(data[0].todos))
   } catch (err) {
     console.error(err);
   }
 }
 
-const deleteTodoFromFile = async (deleteTodo, position) => {
+const deleteTodoFromFile = async (deleteTodo, index) => {
   try {
-    const data = JSON.parse(await fs.readFile('database/todoList.json'));
-    deleteTodo(position, data[0].todos);
-    const jsonData = JSON.stringify(data);
+    let data = JSON.parse(await fs.readFile('database/todoList.json'));
+    console.log(data);
+    let  newArray = deleteTodo(data[0].todos, {position: index});
+    const jsonData = JSON.stringify(newArray);
     await fs.writeFile('database/todoList.json', jsonData);
     readTodosFromFile(readTodos);
   } catch (err) {
