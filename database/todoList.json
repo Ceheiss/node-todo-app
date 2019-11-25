@@ -2,15 +2,15 @@
   {
     "todos": [
       {
-        "todo": "holas",
+        "todo": "sample todo one",
         "completed": true
       },
       {
-        "todo": "holanda",
+        "todo": "sample todo two",
         "completed": false
       },
       {
-        "todo": "nuevo todo",
+        "todo": "sample todo thre",
         "completed": true
       }
     ]
