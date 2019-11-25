@@ -16,7 +16,7 @@ let secondArg = process.argv[4];
 
 const runHelper = () => {
   console.log(
-    "to read a list of todos type --> read\nto edit a todo type -> edit position-of-todo 'new-value-for-todo'\nto delete a todo type -> delete position-of-todo\nto add a new todo type -> add 'new-todo-value'\nIMPORTANT, each time you enter a new value it should be in quotation marks");
+    "===============THIS ARE THE COMMANDS YOU NEED===============\n* to read a list of todos type --> read\n* to edit a todo type -> edit position-of-todo 'new-value-for-todo'\n* to delete a todo type -> delete position-of-todo\n* to add a new todo type -> add 'new-todo-value'\n* to toggle th completeness value of a todo -> toggle position-of-todo\n* IMPORTANT -unlesss is a position- each time you enter a new value it should be in quotation marks");
 }
 
 let startFunc = (command, firstArg, secondArg) => {
