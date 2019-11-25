@@ -1,7 +1,8 @@
 [
   {
     "todos": [
-      {"todo": "hola", "completed": false}
+      {"todo": "hola", "completed": false},
+      {"todo": "holas", "completed": true}
     ]
   }
 ]
