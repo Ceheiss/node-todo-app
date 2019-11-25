@@ -1,6 +1,6 @@
-const readTodos = (array) => {
+const readTodos = (state) => {
   let todoString = "============================\nHERE ARE YOUR CURRENT TODOS\n============================\n";
-  array.forEach((el,i) => todoString += `${i}. ${el}\n`);
+  state.forEach((el, i) => todoString += `${i}. ${el}\n`);
   return todoString
 }
 
