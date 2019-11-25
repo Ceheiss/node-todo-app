@@ -15,5 +15,5 @@ test("it deletes a specific todo", async () => {
 test("it throws an error when position is out of range", ()=>{
   let todos = ["one"];
   let outOfRangeDelete = deleteTodo(todos, {position: 2});
-  expect(outOfRangeDelete).rejects.toEqual("out of range");
+  expect(outOfRangeDelete).rejects.toEqual("There is no todo in that position!");
 })

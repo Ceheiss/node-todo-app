@@ -3,7 +3,7 @@ const createTodo = (newTodo, state) => {
     return Promise.reject("Please enter a todo");
   }
   let returnedArray = state.slice(0);
-  returnedArray.push(newTodo);
+  returnedArray.push({todo: newTodo, completed: false});
   return Promise.resolve(returnedArray);
 }
 
