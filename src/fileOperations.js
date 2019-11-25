@@ -39,7 +39,8 @@ const addTodoInFile = async (addTodo, todoString) => {
 const updateTodoInFile = async (updateTodo, position, newValue) => {
   try {
     const data = JSON.parse(await fs.readFile('database/todoList.json'));
-    updateTodo(position, newValue, data[0].todos);
+    let newAddedData = await updateTodo(data[0].todos, {position, newValue});
+    data[0].todos = newAddedData;
     const jsonData = JSON.stringify(data);
     await fs.writeFile('database/todoList.json', jsonData);
     readTodosFromFile(readTodos);
