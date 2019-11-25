@@ -1,6 +1,6 @@
 const toggleCompleteness = (state, params) => {
-  if (params.position > state.length) {
-    return Promise.reject("The is no todo in that position");
+  if (params.position >= state.length) {
+    return Promise.reject("There is no todo in that position!");
   }
   let returnedArray = state.slice(0);
   if (returnedArray[params.position].completed){

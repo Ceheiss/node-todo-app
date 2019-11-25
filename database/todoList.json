@@ -8,6 +8,10 @@
       {
         "todo": "holanda",
         "completed": false
+      },
+      {
+        "todo": "nuevo todo",
+        "completed": true
       }
     ]
   }

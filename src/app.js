@@ -3,10 +3,12 @@ const readTodosFromFile = require("./fileOperations").readTodosFromFile;
 const addTodoInFile = require("./fileOperations").addTodoInFile;
 const deleteTodoFromFile = require("./fileOperations").deleteTodoFromFile;
 const updateTodoInFile = require("./fileOperations").updateTodoInFile;
+const toggleCompletenessInFile = require("./fileOperations").toggleCompletenessInFile;
 const createTodo = require("./createTodo");
 const readTodos = require("./readTodos");
 const updateTodo = require("./updateTodo");
 const deleteTodo = require("./deleteTodo");
+const toggleCompleteness = require("./toggleCompleteness");
 
 let command = process.argv[2];
 let firstArg = process.argv[3];
@@ -22,6 +24,7 @@ let startFunc = (command, firstArg, secondArg) => {
   if (command === "read") readTodosFromFile(readTodos);
   if (command === "edit") updateTodoInFile(updateTodo, firstArg, secondArg);
   if (command === "delete") deleteTodoFromFile(deleteTodo, firstArg);
+  if (command === "toggle") toggleCompletenessInFile(toggleCompleteness, firstArg);
   if (command === "help") runHelper();
 }
 

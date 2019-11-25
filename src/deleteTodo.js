@@ -1,5 +1,5 @@
 const deleteTodo = (state, params) => {
-  if (params.position > state.length){
+  if (params.position >= state.length){
     return Promise.reject("There is no todo in that position!")
   }
   if (state.length === 0){

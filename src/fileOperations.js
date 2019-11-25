@@ -49,9 +49,23 @@ const updateTodoInFile = async (updateTodo, position, newValue) => {
   }
 }
 
+const toggleCompletenessInFile = async (toggleCompleteness, index) => {
+  try {
+    const data = JSON.parse(await fs.readFile('database/todoList.json'));
+    let newToggledData = await toggleCompleteness(data[0].todos, {position: index});
+    data[0].todos = newToggledData;
+    const jsonData = JSON.stringify(data, null, 2);
+    await fs.writeFile('database/todoList.json', jsonData);
+    readTodosFromFile(readTodos);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 module.exports = {
   readTodosFromFile,
   addTodoInFile,
   deleteTodoFromFile,
-  updateTodoInFile
+  updateTodoInFile,
+  toggleCompletenessInFile
 }
