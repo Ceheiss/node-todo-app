@@ -1,7 +1,7 @@
 const createTodo = require("./createTodo");
 
-test("it should add a todo", () => {
+test("it should add a todo", async () => {
   let todos = [];
-  createTodo("new todo", todos)
-  expect(todos.length).toBe(1)
+  let todosWithNewItem = await createTodo("new todo", todos);
+  expect(todosWithNewItem.length).toBe(1)
 })

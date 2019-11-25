@@ -26,7 +26,8 @@ const deleteTodoFromFile = async (deleteTodo, index) => {
 const addTodoInFile = async (addTodo, todoString) => {
   try {
     const data = JSON.parse(await fs.readFile('database/todoList.json'));
-    addTodo(todoString, data[0].todos);
+    let newAddedData = await addTodo(todoString, data[0].todos);
+    data[0].todos = newAddedData;
     const jsonData = JSON.stringify(data);
     await fs.writeFile('database/todoList.json', jsonData);
     readTodosFromFile(readTodos);
