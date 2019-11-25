@@ -1,1 +1,17 @@
-[{"todos":["nuevo valor","Secondino","new todo","EN CAPS 4","EN CAPS 5","EN CAPS 6","hola","324","{dsdss}","fo"]}]
+[
+  {
+    "todos": [
+      "nuevo valor",
+      "Secondino",
+      "new todo",
+      "EN CAPS 4",
+      "EN CAPS 5",
+      "EN CAPS 6",
+      "hola",
+      "324",
+      "{dsdss}",
+      "fo",
+      "new todo"
+    ]
+  }
+]

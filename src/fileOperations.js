@@ -15,7 +15,7 @@ const deleteTodoFromFile = async (deleteTodo, index) => {
     let data = JSON.parse(await fs.readFile('database/todoList.json'));
     let  newArray = await deleteTodo(data[0].todos, {position: index});
     data[0].todos = newArray;
-    const jsonData = JSON.stringify(data);
+    const jsonData = JSON.stringify(data, null, 2);
     await fs.writeFile('database/todoList.json', jsonData);
     readTodosFromFile(readTodos);
   } catch (err) {
@@ -28,7 +28,7 @@ const addTodoInFile = async (addTodo, todoString) => {
     const data = JSON.parse(await fs.readFile('database/todoList.json'));
     let newAddedData = await addTodo(todoString, data[0].todos);
     data[0].todos = newAddedData;
-    const jsonData = JSON.stringify(data);
+    const jsonData = JSON.stringify(data, null, 2);
     await fs.writeFile('database/todoList.json', jsonData);
     readTodosFromFile(readTodos);
   } catch (err) {
@@ -41,7 +41,7 @@ const updateTodoInFile = async (updateTodo, position, newValue) => {
     const data = JSON.parse(await fs.readFile('database/todoList.json'));
     let newAddedData = await updateTodo(data[0].todos, {position, newValue});
     data[0].todos = newAddedData;
-    const jsonData = JSON.stringify(data);
+    const jsonData = JSON.stringify(data, null, 2);
     await fs.writeFile('database/todoList.json', jsonData);
     readTodosFromFile(readTodos);
   } catch (err) {
