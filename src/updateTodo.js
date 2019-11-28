@@ -8,7 +8,7 @@ const updateTodo = (state, {position, newValue} = {}) => {
     return Promise.reject(new Error("There is no todo in that position"));
   }
   // copy of original is to keep immutability
-  let returnedArray = state.slice(0);
+  let returnedArray = [...state];
   returnedArray[position] = newValue;
   return Promise.resolve(returnedArray);
 }

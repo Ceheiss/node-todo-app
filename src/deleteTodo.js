@@ -5,8 +5,7 @@ const deleteTodo = (state, params) => {
   if (state.length === 0){
     return Promise.reject("You don't have any todos left")
   }
-  let returnedArray = state.slice(0);
-  returnedArray.splice(params.position, 1);
+  let returnedArray = state.filter((el, i) => i !== params.position);
   return Promise.resolve(returnedArray);
 }
 

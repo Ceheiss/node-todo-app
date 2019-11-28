@@ -3,7 +3,8 @@ const readTodosFromFile = require("./fileOperations").readTodosFromFile;
 const addTodoInFile = require("./fileOperations").addTodoInFile;
 const deleteTodoFromFile = require("./fileOperations").deleteTodoFromFile;
 const updateTodoInFile = require("./fileOperations").updateTodoInFile;
-const toggleCompletenessInFile = require("./fileOperations").toggleCompletenessInFile;
+const toggleCompletenessInFile = require("./fileOperations")
+  .toggleCompletenessInFile;
 const createTodo = require("./createTodo");
 const readTodos = require("./readTodos");
 const updateTodo = require("./updateTodo");
@@ -16,16 +17,18 @@ let secondArg = process.argv[4];
 
 const runHelper = () => {
   console.log(
-    "===============THIS ARE THE COMMANDS YOU NEED===============\n* to read a list of todos type --> read\n* to edit a todo type -> edit position-of-todo 'new-value-for-todo'\n* to delete a todo type -> delete position-of-todo\n* to add a new todo type -> add 'new-todo-value'\n* to toggle th completeness value of a todo -> toggle position-of-todo\n* IMPORTANT -unlesss is a position- each time you enter a new value it should be in quotation marks");
-}
+    "===============THIS ARE THE COMMANDS YOU NEED===============\n* to read a list of todos type --> read\n* to edit a todo type -> edit position-of-todo 'new-value-for-todo'\n* to delete a todo type -> delete position-of-todo\n* to add a new todo type -> add 'new-todo-value'\n* to toggle th completeness value of a todo -> toggle position-of-todo\n* IMPORTANT -unlesss is a position- each time you enter a new value it should be in quotation marks"
+  );
+};
 
 let startFunc = (command, firstArg, secondArg) => {
   if (command === "add") addTodoInFile(createTodo, firstArg);
   if (command === "read") readTodosFromFile(readTodos);
   if (command === "edit") updateTodoInFile(updateTodo, firstArg, secondArg);
   if (command === "delete") deleteTodoFromFile(deleteTodo, firstArg);
-  if (command === "toggle") toggleCompletenessInFile(toggleCompleteness, firstArg);
+  if (command === "toggle")
+    toggleCompletenessInFile(toggleCompleteness, firstArg);
   if (command === "help") runHelper();
-}
+};
 
 startFunc(command, firstArg, secondArg);
