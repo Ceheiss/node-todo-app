@@ -1,4 +1,4 @@
-const toggleCompleteness = (state, params) => {
+const toggleTodoCompleteness = (state, params) => {
   if (params.position >= state.length) {
     return Promise.reject("There is no todo in that position!");
   }
@@ -11,4 +11,4 @@ const toggleCompleteness = (state, params) => {
   return Promise.resolve(returnedArray);
 }
 
-module.exports = toggleCompleteness;
+module.exports = toggleTodoCompleteness;

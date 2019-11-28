@@ -49,10 +49,10 @@ const updateTodoInFile = async (updateTodo, position, newValue) => {
   }
 }
 
-const toggleCompletenessInFile = async (toggleCompleteness, index) => {
+const toggleTodoCompletenessInFile = async (toggleTodoCompleteness, index) => {
   try {
     const data = JSON.parse(await fs.readFile('database/todoList.json'));
-    let newToggledData = await toggleCompleteness(data[0].todos, {position: index});
+    let newToggledData = await toggleTodoCompleteness(data[0].todos, {position: index});
     data[0].todos = newToggledData;
     const jsonData = JSON.stringify(data, null, 2);
     await fs.writeFile('database/todoList.json', jsonData);
@@ -67,5 +67,5 @@ module.exports = {
   addTodoInFile,
   deleteTodoFromFile,
   updateTodoInFile,
-  toggleCompletenessInFile
+  toggleTodoCompletenessInFile
 }

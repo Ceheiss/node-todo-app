@@ -2,15 +2,15 @@
   {
     "todos": [
       {
-        "todo": "sample todo one",
-        "completed": true
-      },
-      {
         "todo": "sample todo two",
         "completed": false
       },
       {
         "todo": "sample todo thre",
+        "completed": true
+      },
+      {
+        "todo": "nuevo todo",
         "completed": true
       }
     ]
