@@ -1,10 +1,8 @@
 const runApp = require('./app.js');
 
 let command;
-const firstArg = 0;
-const secondArg = 1;
 
-test("run app reads", ()=> {
+test("run app reads returns and object (promise)", ()=> {
   command = "read";
-  expect(true).toBe(true)
+  expect(typeof runApp(command)).toBe("object")
 })

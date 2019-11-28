@@ -2,16 +2,8 @@
   {
     "todos": [
       {
-        "todo": "sample todo two",
+        "todo": "Hola Tarola",
         "completed": false
-      },
-      {
-        "todo": "sample todo thre",
-        "completed": true
-      },
-      {
-        "todo": "nuevo todo",
-        "completed": true
       }
     ]
   }
